@@ -1,0 +1,9 @@
+/.bundle/
+/.rubocop-*
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/

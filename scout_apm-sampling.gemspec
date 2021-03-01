@@ -23,6 +23,9 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "actionpack", ">= 6.0"
   spec.add_dependency "activejob", ">= 6.0"
+  spec.add_dependency "scout_apm", "~> 4.0"
 
+  spec.add_development_dependency "minitest-reporters"
+  spec.add_development_dependency "mocha"
   spec.add_development_dependency "rake", "~> 13.0"
 end

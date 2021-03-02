@@ -41,17 +41,6 @@ This value will be used as the default sampling rate in your application.
 
     export SCOUT_APM_SAMPLING_RATE=0.01 # Sample only 1% of the requests
 
-You can also set `SCOUT_APM_WEB_SAMPLING_RATE` and
-`SCOUT_APM_WORKER_SAMPLING_RATE` in case you want a different sampling rate
-between web endpoints and your workers.
-
-    # Only sampling 5% of the web requests, but 50% of the workers
-    export SCOUT_APM_WEB_SAMPLING_RATE=0.05
-    export SCOUT_APM_WORKER_SAMPLING_RATE=0.5
-
-Note that these two environment variables will take precedent over
-`SCOUT_APM_SAMPLING_RATE`.
-
 By default, this gem sets `SCOUT_APM_SAMPLING_RATE` to `1` to capture all of
 the requests.
 

@@ -10,7 +10,7 @@ base on the recommendations in [Scout APM's documentation][2].
 
 This gem is designed to work with a Ruby on Rails application.
 
-Once installed, this gem will add `before_action` and `before_enqueue` callbacks
+Once installed, this gem will add `before_action` and `before_perform` callbacks
 to `ActionController:Base` and `ActiveJob::Base` which calculates probability
 and make Scout ignore current transaction if it falls under the threshold.
 

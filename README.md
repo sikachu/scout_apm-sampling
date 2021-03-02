@@ -26,7 +26,10 @@ And then execute:
 
 ## Configuration
 
-There are a few ways you can configure the sampling rate.
+You can set a sampling rate using `SCOUT_APM_SAMPLING_RATE` environment variable.
+This value will be used as the default sampling rate in your application.
+
+    export SCOUT_APM_SAMPLING_RATE=0.01 # Sample only 1% of the requests
 
 Note that sampling rate should be a decimal ranging from 0-1:
 
@@ -34,36 +37,8 @@ Note that sampling rate should be a decimal ranging from 0-1:
 * 0.75: captures 75% of the requests
 * 1: captures all requests
 
-### Using an environment variable
-
-You can set a sampling rate using `SCOUT_APM_SAMPLING_RATE` environment variable.
-This value will be used as the default sampling rate in your application.
-
-    export SCOUT_APM_SAMPLING_RATE=0.01 # Sample only 1% of the requests
-
 By default, this gem sets `SCOUT_APM_SAMPLING_RATE` to `1` to capture all of
 the requests.
-
-### Inside your controller or job
-
-In case you want to sample a particular endpoint or jobs with a different rate
-than the default rate from the envinronment variable, you can call
-`set_scout_apm_sample_rate` in your controller or job:
-
-#### Inside a controller
-
-    class UsersController < ApplicationController
-      # Applying sample rate to the whole controller
-      set_scout_apm_sample_rate 0.75
-
-      # Applying sample rate to specific action
-      set_scout_apm_sample_rate 0.1, only: :show
-      set_scout_apm_sample_rate 1, only: [:create, :destroy]
-
-#### Inside a job
-
-    class UserCreationJob < ApplicationJob
-      set_scout_apm_sample_rate 0.5
 
 ## Development
 

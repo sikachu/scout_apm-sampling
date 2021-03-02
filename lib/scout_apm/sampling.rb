@@ -18,8 +18,10 @@ module ScoutApm
       end
 
       def scout_apm_sampling_rate
-        if ENV["SCOUT_APM_SAMPLING_RATE"]
-          ENV["SCOUT_APM_SAMPLING_RATE"].to_f
+        sampling_rate = ENV["SCOUT_APM_SAMPLING_RATE"]
+
+        if sampling_rate.to_s =~ /\A0?\.?[0-9]+\z/
+          sampling_rate.to_f
         else
           DEFAULT_SCOUT_APM_SAMPLING_RATE
         end

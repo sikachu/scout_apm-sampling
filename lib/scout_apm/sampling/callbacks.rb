@@ -1,3 +1,5 @@
+require "scout_apm/transaction"
+
 module ScoutApm
   module Sampling
     module Callbacks

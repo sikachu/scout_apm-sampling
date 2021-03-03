@@ -9,5 +9,15 @@ require "minitest/reporters"
 require "mocha/minitest"
 
 require "scout_apm/sampling"
+require "scout_apm/sampling/controller"
+require "scout_apm/sampling/worker"
 
 Minitest::Reporters.use!
+
+ActiveSupport.on_load(:action_controller) do
+  include ScoutApm::Sampling::Controller
+end
+
+ActiveSupport.on_load(:active_job) do
+  include ScoutApm::Sampling::Worker
+end

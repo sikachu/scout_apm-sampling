@@ -1,4 +1,5 @@
 require "test_helper"
+require "scout_apm/transaction"
 
 class ControllerTest < ActionController::TestCase
   class TestController < ActionController::Base

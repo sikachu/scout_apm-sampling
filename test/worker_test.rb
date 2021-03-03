@@ -1,4 +1,5 @@
 require "test_helper"
+require "scout_apm/transaction"
 
 class WorkerTest < ActiveJob::TestCase
   class TestJob < ActiveJob::Base

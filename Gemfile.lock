@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    scout_apm-sampling (0.1.0)
+    scout_apm-sampling (1.0.0)
       actionpack (>= 6.0)
       activejob (>= 6.0)
       scout_apm (~> 4.0)

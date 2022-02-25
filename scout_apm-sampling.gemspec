@@ -2,7 +2,7 @@ require_relative "lib/scout_apm/sampling/version"
 
 # This environment variable is set on CI to facilitate testing with multiple
 # versions of Rails.
-RAILS_DEPENDENCY_VERSION = ENV.fetch("RAILS_VERSION", ">= 6.0")
+RAILS_DEPENDENCY_VERSION = ENV.fetch("RAILS_VERSION", ">= 6.1")
 
 Gem::Specification.new do |spec|
   spec.name          = "scout_apm-sampling"
@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.summary       = "Providing an out-of-the-box sampling feature to scout_apm gem"
   spec.homepage      = "https://github.com/sikachu/scout_apm-sampling"
   spec.license       = "MIT"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0") # rubocop:disable Gemspec/RequiredRubyVersion
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.7")
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage

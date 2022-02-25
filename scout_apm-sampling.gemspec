@@ -1,5 +1,9 @@
 require_relative "lib/scout_apm/sampling/version"
 
+# This environment variable is set on CI to facilitate testing with multiple
+# versions of Rails.
+RAILS_DEPENDENCY_VERSION = ENV.fetch("RAILS_VERSION", ">= 6.0")
+
 Gem::Specification.new do |spec|
   spec.name          = "scout_apm-sampling"
   spec.version       = ScoutApm::Sampling::VERSION
@@ -22,8 +26,8 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "actionpack", ">= 6.0"
-  spec.add_dependency "activejob", ">= 6.0"
+  spec.add_dependency "actionpack", RAILS_DEPENDENCY_VERSION
+  spec.add_dependency "activejob", RAILS_DEPENDENCY_VERSION
   spec.add_dependency "scout_apm"
 
   spec.add_development_dependency "minitest-reporters"

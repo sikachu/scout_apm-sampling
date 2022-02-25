@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.summary       = "Providing an out-of-the-box sampling feature to scout_apm gem"
   spec.homepage      = "https://github.com/sikachu/scout_apm-sampling"
   spec.license       = "MIT"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0")
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0") # rubocop:disable Gemspec/RequiredRubyVersion
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "actionpack", ">= 6.0"
   spec.add_dependency "activejob", ">= 6.0"
-  spec.add_dependency "scout_apm", "~> 4.0"
+  spec.add_dependency "scout_apm"
 
   spec.add_development_dependency "minitest-reporters"
   spec.add_development_dependency "mocha"
